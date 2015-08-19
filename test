@@ -1,0 +1,9 @@
+$sendgrid = new SendGrid($api_user, $api_key);
+$email    = new SendGrid\Email();
+ 
+$email->addTo("bughyguy@yahoo.com")
+      ->setFrom("bogdanstefan_gheorghita@yahoo.com")
+      ->setSubject("Sending with SendGrid is Fun")
+      ->setHtml("and easy to do anywhere, even with PHP");
+ 
+$sendgrid->send($email);
